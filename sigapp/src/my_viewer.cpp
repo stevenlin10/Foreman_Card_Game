@@ -1,3 +1,10 @@
+/*
+	Function definitions of the viewer. Please reference my_viewer.h for more abstract details.
+
+	This is written using SIG libraries, which are the property of Professor Kallman of University of California, Merced.
+
+	Written by Jeff Foreman, 5 April 2018
+*/
 
 # include "my_viewer.h"
 
@@ -68,6 +75,7 @@ void MyViewer::build_scene()
 	
 }
 
+// Handle keyboard events.
 int MyViewer::handle_keyboard(const GsEvent &event)
 {
 	// First let system check events.
@@ -84,6 +92,7 @@ int MyViewer::handle_keyboard(const GsEvent &event)
 	return 0;
 }
 
+// Handle UI events.
 int MyViewer::uievent(int event)
 {
 	// Handle the appropriate UI event.
