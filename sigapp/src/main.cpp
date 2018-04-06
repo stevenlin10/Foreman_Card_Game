@@ -1,4 +1,10 @@
+/*
+	Primary driver of viewer application.
 
+	This is written using SIG libraries, which are the property of Professor Kallman of University of California, Merced.
+
+	Written by Jeff Foreman, 5 April 2018
+*/
 # include "my_viewer.h"
 
 # include <sigogl/ws_run.h>
