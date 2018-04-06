@@ -17,15 +17,26 @@
 class MyViewer : public WsViewer
 {  
 protected :
-	enum MenuEv { EvNormals, EvAnimate, EvExit };
-	UiCheckButton* _nbut;
+	enum MenuEv { EvExit }; // Enumerations of UI events.
+	UiCheckButton* _nbut; // UI drop down buttons.
 
 public :
+	// Constructor.
 	MyViewer(int x, int y, int w, int h, const char* l);
+
+	// Build the UI.
 	void build_ui();
+
+	// Add models to the scene. Takes in the primitive to be added, and the point to be added at.
 	void add_model(SnShape* s, GsVec p);
+
+	// Build the models to be added to the scene.
 	void build_scene();
+
+	// Handle keyboard events.
 	virtual int handle_keyboard(const GsEvent &e) override;
+
+	// Handle UI events.
 	virtual int uievent(int e) override;
 };
 

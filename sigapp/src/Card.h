@@ -8,25 +8,17 @@
 	Written by Jeff Foreman, 5 April 2018
 */
 
-#pragma once
+# pragma once
 
 # include <sig/sn_primitive.h>
-# include <sig/sn_transform.h>
-# include <sig/sn_manipulator.h>
 
 class Card
 {
-protected:
-	// Special declarations.
-	enum CardSuits {Clubs, Diamonds, Hearts, Spades}; // Enumerate the card suits.
-	const int Ace = 1, Jack = 11, Queen = 12, King = 13; // Declare the special values of the face cards and the ace.
-
-	// Card class variables.
-	int value; // Value of the card.
-	CardSuits suit; // Suit of the card.
-	GsColor color; // Color of the card.
-
 public:
+	// Special declarations.
+	enum CardSuits { Clubs, Diamonds, Hearts, Spades }; // Enumerate the card suits.
+	const static int Ace = 1, Jack = 11, Queen = 12, King = 13; // Declare the special values of the face cards and the ace.
+
 	// Constructor. Takes in the card value, suit, and color.
 	Card(int value, CardSuits suit, GsColor color);
 
@@ -35,5 +27,9 @@ public:
 	CardSuits getSuit(); // Returns card suit.
 	GsColor getColor(); // Returns the card color.
 
-
+protected:
+	// Card class variables.
+	int value; // Value of the card.
+	CardSuits suit; // Suit of the card.
+	GsColor color; // Color of the card.
 };

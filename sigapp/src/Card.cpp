@@ -6,8 +6,7 @@
 	Written by Jeff Foreman, 5 April 2018
 */
 
-#include "Card.h"
-#include "my_viewer.h"
+# include "Card.h"
 
 Card::Card(int value, Card::CardSuits suit, GsColor color){ this->value = value; this->suit = suit; this->color = color; }
 

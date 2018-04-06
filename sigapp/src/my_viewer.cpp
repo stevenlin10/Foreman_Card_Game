@@ -7,6 +7,7 @@
 */
 
 # include "my_viewer.h"
+# include "Card.h"
 
 # include <sigogl/ui_button.h>
 # include <sigogl/ui_radio_button.h>
@@ -72,7 +73,12 @@ void MyViewer::add_model(SnShape* s, GsVec p)
 // Create the Viewer scene.
 void MyViewer::build_scene()
 {
-	
+	Card test(Card::Ace, Card::CardSuits::Spades, GsColor::black);
+
+	SnPrimitive *p = new SnPrimitive(GsPrimitive::Box, 2.5f, 3.5f, 0.1f);
+	p->prim().material.diffuse = test.getColor();
+
+	add_model(p, GsVec(0, 0, 0));
 }
 
 // Handle keyboard events.
