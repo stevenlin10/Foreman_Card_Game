@@ -15,6 +15,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\Card.cpp" />
     <ClCompile Include="..\src\main.cpp" />
     <ClCompile Include="..\src\my_viewer.cpp" />
   </ItemGroup>
