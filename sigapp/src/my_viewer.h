@@ -1,7 +1,7 @@
 /*
 	This header file defines the structure and global variables of the program viewer.
 
-	This is written using SIG libraries, which are the property of Professor Kallman of University of California, Merced.
+	This is written using SIG libraries, which are the property of Professor Kallmann of University of California, Merced.
 
 	Written by Jeff Foreman, 5 April 2018
 */

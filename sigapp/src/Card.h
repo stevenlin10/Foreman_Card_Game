@@ -3,7 +3,7 @@
 	A Card belongs to one of four suits, and holds a value of either two through ten, a face value, or is an ace.
 	These define the individual units of a Deck.
 
-	This is written using SIG libraries, which are the property of Professor Kallman of University of California, Merced.
+	This is written using SIG libraries, which are the property of Professor Kallmann of University of California, Merced.
 
 	Written by Jeff Foreman, 5 April 2018
 */
