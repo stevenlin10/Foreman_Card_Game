@@ -11,13 +11,13 @@
 
 # include "Card.h"
 
-# include <stack>
+# include <deque>
 
 class Deck
 {
 protected: // Class variables.
 
-	std::stack<Card> cards; // The stack of cards in the deck.
+	std::deque<Card> cards; // The vector of cards in the deck.
 
 protected: // Helper class functions.
 

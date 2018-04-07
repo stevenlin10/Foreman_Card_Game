@@ -24,66 +24,66 @@ void Deck::generateDeck()
 
 	// Add the Aces.
 	temp = new Card(Card::Ace, Card::CardSuits::Clubs, GsColor::black);
-	Deck::cards.push(*temp);
+	Deck::cards.push_front(*temp);
 	temp = new Card(Card::Ace, Card::CardSuits::Diamonds, GsColor::red);
-	Deck::cards.push(*temp);
+	Deck::cards.push_front(*temp);
 	temp = new Card(Card::Ace, Card::CardSuits::Hearts, GsColor::red);
-	Deck::cards.push(*temp);
+	Deck::cards.push_front(*temp);
 	temp = new Card(Card::Ace, Card::CardSuits::Spades, GsColor::black);
-	Deck::cards.push(*temp);
+	Deck::cards.push_front(*temp);
 
 	// Add the numeric cards.
 	for (int i = 2; i < 11; i++)
 	{
 		temp = new Card(i, Card::CardSuits::Clubs, GsColor::black);
-		Deck::cards.push(*temp);
+		Deck::cards.push_front(*temp);
 	}
 
 	for (int i = 2; i < 11; i++)
 	{
 		temp = new Card(i, Card::CardSuits::Diamonds, GsColor::red);
-		Deck::cards.push(*temp);
+		Deck::cards.push_front(*temp);
 	}
 
 	for (int i = 2; i < 11; i++)
 	{
 		temp = new Card(i, Card::CardSuits::Hearts, GsColor::red);
-		Deck::cards.push(*temp);
+		Deck::cards.push_front(*temp);
 	}
 
 	for (int i = 2; i < 11; i++)
 	{
 		temp = new Card(i, Card::CardSuits::Spades, GsColor::black);
-		Deck::cards.push(*temp);
+		Deck::cards.push_front(*temp);
 	}
 
 	// Add the face cards.
 	temp = new Card(Card::Jack, Card::CardSuits::Clubs, GsColor::black);
-	Deck::cards.push(*temp);
+	Deck::cards.push_front(*temp);
 	temp = new Card(Card::Jack, Card::CardSuits::Diamonds, GsColor::red);
-	Deck::cards.push(*temp);
+	Deck::cards.push_front(*temp);
 	temp = new Card(Card::Jack, Card::CardSuits::Hearts, GsColor::red);
-	Deck::cards.push(*temp);
+	Deck::cards.push_front(*temp);
 	temp = new Card(Card::Jack, Card::CardSuits::Spades, GsColor::black);
-	Deck::cards.push(*temp);
+	Deck::cards.push_front(*temp);
 
 	temp = new Card(Card::Queen, Card::CardSuits::Clubs, GsColor::black);
-	Deck::cards.push(*temp);
+	Deck::cards.push_front(*temp);
 	temp = new Card(Card::Queen, Card::CardSuits::Diamonds, GsColor::red);
-	Deck::cards.push(*temp);
+	Deck::cards.push_front(*temp);
 	temp = new Card(Card::Queen, Card::CardSuits::Hearts, GsColor::red);
-	Deck::cards.push(*temp);
+	Deck::cards.push_front(*temp);
 	temp = new Card(Card::Queen, Card::CardSuits::Spades, GsColor::black);
-	Deck::cards.push(*temp);
+	Deck::cards.push_front(*temp);
 
 	temp = new Card(Card::King, Card::CardSuits::Clubs, GsColor::black);
-	Deck::cards.push(*temp);
+	Deck::cards.push_front(*temp);
 	temp = new Card(Card::King, Card::CardSuits::Diamonds, GsColor::red);
-	Deck::cards.push(*temp);
+	Deck::cards.push_front(*temp);
 	temp = new Card(Card::King, Card::CardSuits::Hearts, GsColor::red);
-	Deck::cards.push(*temp);
+	Deck::cards.push_front(*temp);
 	temp = new Card(Card::King, Card::CardSuits::Spades, GsColor::black);
-	Deck::cards.push(*temp);
+	Deck::cards.push_front(*temp);
 }
 
 Card Deck::drawCard() 
@@ -91,14 +91,14 @@ Card Deck::drawCard()
 	// Temporary card to store the drawn card.
 	Card drawnCard;
 
-	// Draw the card from the top of the stack.
-	drawnCard = Deck::cards.top();
-
-	// Remove the card from the stack.
-	Deck::cards.pop();
+	drawnCard = cards.front();
+	cards.pop_front();
 
 	// Return the drawn card.
 	return drawnCard;
 }
 
-void Deck::shuffle() {}
+void Deck::shuffle() 
+{
+	
+}
