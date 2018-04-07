@@ -74,15 +74,12 @@ void MyViewer::add_model(SnShape* s, GsVec p)
 // Create the Viewer scene.
 void MyViewer::build_scene()
 {
-	Deck *myDeck = new Deck();
+	Deck mainDeck(Deck::DeckType::Main);
+	Deck hand(Deck::DeckType::Hand);
 
-	Card drawnCard;
+	hand.drawCard(mainDeck);
 
-	for (int i = 0; i < 52; i++)
-	{
-		drawnCard = myDeck->drawCard();
-		gsout << "Card # is: " << drawnCard.getValue() << gsnl;
-	}
+	hand.print();
 }
 
 // Handle keyboard events.

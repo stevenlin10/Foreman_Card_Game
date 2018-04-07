@@ -9,13 +9,31 @@
 # include "Deck.h"
 # include <algorithm>
 
-Deck::Deck()
+Deck::Deck(Deck::DeckType type)
 {
-	// Build the deck.
-	generateDeck();
+	// Build the deck based on the type.
+	switch (type)
+	{
+		// The main playing deck.
+		case Deck::Main:
+			// Build the full deck.
+			generateDeck();
 
-	// Shuffle up the deck.
-	shuffle();
+			// Shuffle up the deck.
+			shuffle();
+			break;
+
+		// A player's hand. Composed of cards drawn from the deck.
+		case Deck::Hand:
+			break;
+
+		// Discard pile. Composed of discarded cards.
+		case Deck::Discard:
+			break;
+
+		default:
+			break;
+	}
 }
 
 void Deck::generateDeck()
@@ -87,19 +105,25 @@ void Deck::generateDeck()
 	Deck::cards.push_front(*temp);
 }
 
-Card Deck::drawCard() 
-{ 
-	// Temporary card to store the drawn card.
+Card Deck::drawCard()
+{
+	// Temporary storage for drawn card.
 	Card drawnCard;
 
-	// Draw from the "top" of the deck.
+	// Draw the card from the top of the deck.
 	drawnCard = cards.front();
 
-	// Remove from the "top" of the deck.
+	// Remove the card from the top of the deck.
 	cards.pop_front();
 
 	// Return the drawn card.
 	return drawnCard;
+}
+
+void Deck::drawCard(Deck deck) 
+{ 
+	// Place card from the deck and place into this one.
+	cards.push_front(deck.drawCard());
 }
 
 void Deck::shuffle() 
@@ -118,4 +142,10 @@ void Deck::shuffle()
 		// Swap the current index with the random one.
 		std::swap(cards[i], cards[r]);
 	}
+}
+
+void Deck::print()
+{
+	for (size_t i = 0; i < cards.size(); i++)
+		gsout << "Card '" << i << "' has value " << cards[i].getValue() << gsnl;
 }

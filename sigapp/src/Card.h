@@ -41,5 +41,4 @@ public: // Class functions.
 	CardSuits getSuit(); // Returns card suit.
 	GsColor getColor(); // Returns the card color.
 
-
 };

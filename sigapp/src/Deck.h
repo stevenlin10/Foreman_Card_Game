@@ -13,25 +13,32 @@
 
 class Deck
 {
-protected: // Class variables.
+public: // Special declarations.
+	enum DeckType {Main, Hand, Discard};
+
+protected: // Class variables and helper functions.
 	
 	// The vector of cards in the deck.
 	std::deque<Card> cards; 
-
-protected: // Helper class functions.
 
 	// Places the cards onto the stack.
 	void generateDeck(); 
 
 public: // Class functions.
 
-	// Constructor. Takes in no arguments. Creates a standard deck of cards in random order.
-	Deck(); 
+	// Constructor. Takes in deck type. Builds deck based upon the type.
+	Deck(DeckType type); 
+	
+	// Draws a card from the "top" of this deck and returns the card.
+	Card drawCard();
 
-	// Draws a card from top of the deck.
-	Card drawCard(); 
+	// Draws a card from the "top" of a deck and places it into this deck.
+	void drawCard(Deck deck); 
 
 	// Shuffles the deck of cards.
 	void shuffle(); 
+
+	// Print out the deck.
+	void print();
 
 };
