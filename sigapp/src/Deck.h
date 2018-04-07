@@ -35,10 +35,10 @@ public: // Class functions.
 	// Draws a card from the "top" of a deck and places it into this deck.
 	void drawCard(Deck deck); 
 
-	// Shuffles the deck of cards.
+	// Shuffles this deck of cards.
 	void shuffle(); 
 
-	// Print out the deck.
+	// Print out this deck.
 	void print();
 
 };
