@@ -16,7 +16,7 @@ class Card
 {
 public: // Special declarations.
 
-	enum CardSuits { Clubs, Diamonds, Hearts, Spades, Unset }; // Enumerate the card suits.
+	enum CardSuits { Clubs, Diamonds, Hearts, Spades, Blank }; // Enumerate the card suits.
 	const static int Ace = 1, Jack = 11, Queen = 12, King = 13; // Declare the special values of the face cards and the ace.
 
 protected: // Class variables.
