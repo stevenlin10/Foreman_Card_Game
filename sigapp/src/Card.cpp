@@ -8,6 +8,8 @@
 
 # include "Card.h"
 
+Card::Card() { this->value = 0; this->suit = Unset; this->color = GsColor::black; }
+
 Card::Card(int value, Card::CardSuits suit, GsColor color){ this->value = value; this->suit = suit; this->color = color; }
 
 int Card::getValue() { return this->value; }

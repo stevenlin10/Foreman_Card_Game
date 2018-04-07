@@ -19,6 +19,10 @@ protected: // Class variables.
 
 	std::stack<Card> cards; // The stack of cards in the deck.
 
+protected: // Helper class functions.
+
+	void generateDeck(); // Places the cards onto the stack.
+
 public: // Class functions.
 
 	Deck(); // Constructor. Takes in no arguments. Creates a standard deck of cards in random order.
