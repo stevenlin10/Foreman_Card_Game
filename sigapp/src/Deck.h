@@ -2,8 +2,6 @@
 	This header file defines the structure of the class Deck.
 	It is a data structure that contains a literal deck of Cards.
 
-	This is written using SIG libraries, which are the property of Professor Kallmann of University of California, Merced.
-
 	Written by Jeff Foreman, 6 April 2018
 */
 
@@ -16,19 +14,24 @@
 class Deck
 {
 protected: // Class variables.
-
-	std::deque<Card> cards; // The vector of cards in the deck.
+	
+	// The vector of cards in the deck.
+	std::deque<Card> cards; 
 
 protected: // Helper class functions.
 
-	void generateDeck(); // Places the cards onto the stack.
+	// Places the cards onto the stack.
+	void generateDeck(); 
 
 public: // Class functions.
 
-	Deck(); // Constructor. Takes in no arguments. Creates a standard deck of cards in random order.
+	// Constructor. Takes in no arguments. Creates a standard deck of cards in random order.
+	Deck(); 
 
-	Card drawCard(); // Draws a card from top of the deck.
+	// Draws a card from top of the deck.
+	Card drawCard(); 
 
-	void shuffle(); // Shuffles the deck of cards.
+	// Shuffles the deck of cards.
+	void shuffle(); 
 
 };

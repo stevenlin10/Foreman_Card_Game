@@ -7,6 +7,7 @@
 */
 
 # include "Deck.h"
+# include <algorithm>
 
 Deck::Deck()
 {
@@ -91,7 +92,10 @@ Card Deck::drawCard()
 	// Temporary card to store the drawn card.
 	Card drawnCard;
 
+	// Draw from the "top" of the deck.
 	drawnCard = cards.front();
+
+	// Remove from the "top" of the deck.
 	cards.pop_front();
 
 	// Return the drawn card.
@@ -100,5 +104,18 @@ Card Deck::drawCard()
 
 void Deck::shuffle() 
 {
-	
+	// Seed the random number generator.
+	srand(unsigned int(gs_time()));
+
+	// Randomized index.
+	int r;
+
+	for (size_t i = 0; i < cards.size(); i++)
+	{
+		// Get the random index.
+		r = i + (rand() % (cards.size() - i));
+
+		// Swap the current index with the random one.
+		std::swap(cards[i], cards[r]);
+	}
 }
