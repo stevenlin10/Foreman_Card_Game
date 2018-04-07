@@ -14,10 +14,18 @@
 
 class Card
 {
-public:
-	// Special declarations.
+public: // Special declarations.
+
 	enum CardSuits { Clubs, Diamonds, Hearts, Spades }; // Enumerate the card suits.
 	const static int Ace = 1, Jack = 11, Queen = 12, King = 13; // Declare the special values of the face cards and the ace.
+
+protected: // Class variables.
+
+	int value; // Value of the card.
+	CardSuits suit; // Suit of the card.
+	GsColor color; // Color of the card.
+
+public: // Class functions.
 
 	// Constructor. Takes in the card value, suit, and color.
 	Card(int value, CardSuits suit, GsColor color);
@@ -27,9 +35,5 @@ public:
 	CardSuits getSuit(); // Returns card suit.
 	GsColor getColor(); // Returns the card color.
 
-protected:
-	// Card class variables.
-	int value; // Value of the card.
-	CardSuits suit; // Suit of the card.
-	GsColor color; // Color of the card.
+
 };
