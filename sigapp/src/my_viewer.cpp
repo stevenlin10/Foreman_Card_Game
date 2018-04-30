@@ -75,7 +75,7 @@ void MyViewer::add_model(SnShape* s, GsVec p)
 void MyViewer::build_scene()
 {
 	SnModel *s = new SnModel;
-	s->model()->load_obj("../TestCard.obj");
+	s->model()->load_obj("../CardFiles/TestCard.obj");
 	add_model(s, GsVec(0, 0, 0));
 }
 

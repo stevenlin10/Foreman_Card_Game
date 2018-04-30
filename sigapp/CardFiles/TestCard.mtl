@@ -12,8 +12,8 @@ newmtl Material__48
 	Kd 0.5880 0.5880 0.5880
 	Ks 0.0000 0.0000 0.0000
 	Ke 0.0000 0.0000 0.0000
-	map_Ka ../TestCard.png
-	map_Kd ../TestCard.png
+	map_Ka ../CardFiles/TestCard.png
+	map_Kd ../CardFiles/TestCard.png
 
 newmtl Material__49
 	Ns 10.0000
@@ -26,5 +26,5 @@ newmtl Material__49
 	Kd 0.5880 0.5880 0.5880
 	Ks 0.0000 0.0000 0.0000
 	Ke 0.0000 0.0000 0.0000
-	map_Ka ../Card_Back.png
-	map_Kd ../Card_Back.png
+	map_Ka ../CardFiles/Card_Back.png
+	map_Kd ../CardFiles/Card_Back.png
