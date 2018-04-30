@@ -74,7 +74,9 @@ void MyViewer::add_model(SnShape* s, GsVec p)
 // Create the Viewer scene.
 void MyViewer::build_scene()
 {
-	
+	SnModel *s = new SnModel;
+	s->model()->load_obj("../TestCard.obj");
+	add_model(s, GsVec(0, 0, 0));
 }
 
 // Handle keyboard events.
