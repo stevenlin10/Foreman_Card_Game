@@ -26,7 +26,7 @@ protected: // Class variables.
 
 	int value; // Value of the card.
 	CardSuits suit; // Suit of the card.
-	GsColor color; // Color of the card.
+	GsString cardFile; // Name of the 3ds file for the card.
 
 public: // Class functions.
 
@@ -34,11 +34,11 @@ public: // Class functions.
 	Card();
 
 	// Constructor. Takes in the card value, suit, and color.
-	Card(int value, CardSuits suit, GsColor color);
+	Card(int value, CardSuits suit, GsString cardFile);
 
 	// Getters.
 	int getValue(); // Returns card value.
 	CardSuits getSuit(); // Returns card suit.
-	GsColor getColor(); // Returns the card color.
+	GsString getCardFile(); // Returns 3ds file name for the card.
 
 };

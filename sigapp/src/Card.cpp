@@ -8,12 +8,12 @@
 
 # include "Card.h"
 
-Card::Card() { this->value = 0; this->suit = Blank; this->color = GsColor::black; }
+Card::Card() { this->value = 0; this->suit = Blank; this->cardFile = ""; }
 
-Card::Card(int value, Card::CardSuits suit, GsColor color){ this->value = value; this->suit = suit; this->color = color; }
+Card::Card(int value, Card::CardSuits suit, GsString cardFile){ this->value = value; this->suit = suit; this->cardFile = cardFile; }
 
 int Card::getValue() { return this->value; }
 
 Card::CardSuits Card::getSuit() { return this->suit; }
 
-GsColor Card::getColor() { return this->color; }
+GsString Card::getCardFile() { return this->cardFile; }
