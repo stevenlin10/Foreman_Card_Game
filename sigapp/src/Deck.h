@@ -16,6 +16,9 @@ class Deck
 public: // Special declarations.
 	enum DeckType {Main, Hand, Discard};
 
+	// Test card file.
+	GsString testCard = "../CardFiles/TestCard.obj";
+
 protected: // Class variables and helper functions.
 	
 	// The vector of cards in the deck.
@@ -33,12 +36,8 @@ public: // Class functions.
 	Card drawCard();
 
 	// Draws a card from the "top" of a deck and places it into this deck.
-	void drawCard(Deck deck); 
+	Card drawCard(Deck deck); 
 
 	// Shuffles this deck of cards.
 	void shuffle(); 
-
-	// Print out this deck.
-	void print();
-
 };

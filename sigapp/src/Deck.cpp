@@ -42,66 +42,66 @@ void Deck::generateDeck()
 	Card *temp;
 
 	// Add the Aces.
-	temp = new Card(Card::Ace, Card::CardSuits::Clubs, "");
+	temp = new Card(Card::Ace, Card::CardSuits::Clubs, testCard);
 	Deck::cards.push_front(*temp);
-	temp = new Card(Card::Ace, Card::CardSuits::Diamonds, "");
+	temp = new Card(Card::Ace, Card::CardSuits::Diamonds, testCard);
 	Deck::cards.push_front(*temp);
-	temp = new Card(Card::Ace, Card::CardSuits::Hearts, "");
+	temp = new Card(Card::Ace, Card::CardSuits::Hearts, testCard);
 	Deck::cards.push_front(*temp);
-	temp = new Card(Card::Ace, Card::CardSuits::Spades, "");
+	temp = new Card(Card::Ace, Card::CardSuits::Spades, testCard);
 	Deck::cards.push_front(*temp);
 
 	// Add the numeric cards.
 	for (int i = 2; i < 11; i++)
 	{
-		temp = new Card(i, Card::CardSuits::Clubs, "");
+		temp = new Card(i, Card::CardSuits::Clubs, testCard);
 		Deck::cards.push_front(*temp);
 	}
 
 	for (int i = 2; i < 11; i++)
 	{
-		temp = new Card(i, Card::CardSuits::Diamonds, "");
+		temp = new Card(i, Card::CardSuits::Diamonds, testCard);
 		Deck::cards.push_front(*temp);
 	}
 
 	for (int i = 2; i < 11; i++)
 	{
-		temp = new Card(i, Card::CardSuits::Hearts, "");
+		temp = new Card(i, Card::CardSuits::Hearts, testCard);
 		Deck::cards.push_front(*temp);
 	}
 
 	for (int i = 2; i < 11; i++)
 	{
-		temp = new Card(i, Card::CardSuits::Spades, "");
+		temp = new Card(i, Card::CardSuits::Spades, testCard);
 		Deck::cards.push_front(*temp);
 	}
 
 	// Add the face cards.
-	temp = new Card(Card::Jack, Card::CardSuits::Clubs, "");
+	temp = new Card(Card::Jack, Card::CardSuits::Clubs, testCard);
 	Deck::cards.push_front(*temp);
-	temp = new Card(Card::Jack, Card::CardSuits::Diamonds, "");
+	temp = new Card(Card::Jack, Card::CardSuits::Diamonds, testCard);
 	Deck::cards.push_front(*temp);
-	temp = new Card(Card::Jack, Card::CardSuits::Hearts, "");
+	temp = new Card(Card::Jack, Card::CardSuits::Hearts, testCard);
 	Deck::cards.push_front(*temp);
-	temp = new Card(Card::Jack, Card::CardSuits::Spades, "");
-	Deck::cards.push_front(*temp);
-
-	temp = new Card(Card::Queen, Card::CardSuits::Clubs, "");
-	Deck::cards.push_front(*temp);
-	temp = new Card(Card::Queen, Card::CardSuits::Diamonds, "");
-	Deck::cards.push_front(*temp);
-	temp = new Card(Card::Queen, Card::CardSuits::Hearts, "");
-	Deck::cards.push_front(*temp);
-	temp = new Card(Card::Queen, Card::CardSuits::Spades, "");
+	temp = new Card(Card::Jack, Card::CardSuits::Spades, testCard);
 	Deck::cards.push_front(*temp);
 
-	temp = new Card(Card::King, Card::CardSuits::Clubs, "");
+	temp = new Card(Card::Queen, Card::CardSuits::Clubs, testCard);
 	Deck::cards.push_front(*temp);
-	temp = new Card(Card::King, Card::CardSuits::Diamonds, "");
+	temp = new Card(Card::Queen, Card::CardSuits::Diamonds, testCard);
 	Deck::cards.push_front(*temp);
-	temp = new Card(Card::King, Card::CardSuits::Hearts, "");
+	temp = new Card(Card::Queen, Card::CardSuits::Hearts, testCard);
 	Deck::cards.push_front(*temp);
-	temp = new Card(Card::King, Card::CardSuits::Spades, "");
+	temp = new Card(Card::Queen, Card::CardSuits::Spades, testCard);
+	Deck::cards.push_front(*temp);
+
+	temp = new Card(Card::King, Card::CardSuits::Clubs, testCard);
+	Deck::cards.push_front(*temp);
+	temp = new Card(Card::King, Card::CardSuits::Diamonds, testCard);
+	Deck::cards.push_front(*temp);
+	temp = new Card(Card::King, Card::CardSuits::Hearts, testCard);
+	Deck::cards.push_front(*temp);
+	temp = new Card(Card::King, Card::CardSuits::Spades, testCard);
 	Deck::cards.push_front(*temp);
 }
 
@@ -124,16 +124,18 @@ Card Deck::drawCard()
 	return drawnCard;
 }
 
-void Deck::drawCard(Deck deck) 
+Card Deck::drawCard(Deck deck) 
 { 
 	// Draw a card from the other deck.
 	Card drawnCard = deck.drawCard();
 
 	// Check if there actually was a card drawn.
-	if (drawnCard.getValue() == 0) return;
+	if (drawnCard.getValue() == 0) return drawnCard;
 
 	// Add the drawn card to this deck.
 	cards.push_front(drawnCard);
+
+	return drawnCard;
 }
 
 void Deck::shuffle() 
@@ -152,10 +154,4 @@ void Deck::shuffle()
 		// Swap the current index with the random one.
 		std::swap(cards[i], cards[r]);
 	}
-}
-
-void Deck::print()
-{
-	for (size_t i = 0; i < cards.size(); i++)
-		gsout << "Card '" << i << "' has value " << cards[i].getValue() << gsnl;
 }

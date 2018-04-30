@@ -74,9 +74,18 @@ void MyViewer::add_model(SnShape* s, GsVec p)
 // Create the Viewer scene.
 void MyViewer::build_scene()
 {
-	SnModel *s = new SnModel;
-	s->model()->load_obj("../CardFiles/TestCard.obj");
-	add_model(s, GsVec(0, 0, 0));
+	Deck main(Deck::DeckType::Main);
+	Deck hand(Deck::DeckType::Hand);
+
+	SnModel *s;
+	double offset = 0.0;
+	for (int i = 0; i < 52; i++)
+	{
+		s = new SnModel;
+		s->model()->load_obj("../CardFiles/TestCard.obj");
+		add_model(s, GsVec(0.0, 0.0, offset));
+		offset += 0.1;
+	}
 }
 
 // Handle keyboard events.
